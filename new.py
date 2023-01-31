@@ -25,13 +25,12 @@ class WebScrapper:
         self.file_name_ombd = 'ombddata.csv'
         self.file_name_news = 'newsdata.csv'
         self.columns = ['MovieId','MovieName','Rating','Url','UserRatings']
-        self.omdbcolumns = ['Title','Year','Rated','Released','Runtime','Genre','Director','Writer','Actors','Plot','Language','Country'
+        self.omdbcolumns = ['MovieId','Title','Year','Rated','Released','Runtime','Genre','Director','Writer','Actors','Plot','Language','Country'
         'Awards','Metascore','imdbRating','imdbVotes','BoxOffice']
-        self.newscolumns = ['description','title','content','url']
+        self.newscolumns = ['MovieId','description','title','content','url']
         self.all_movies_reviews = []
         self.all_moview_ombd_reviews = []
         self.all_news_data = []
-
 
     def gettopMovies(self):  
         try:  
@@ -173,13 +172,13 @@ class WebScrapper:
                     all_articles = text_value['articles']
                     movie_details['MovieId'] = movie_id 
                     for i in range(len(all_articles)):
-                        if 'description' in all_articles:
+                        if 'description' in all_articles[i]:
                             movie_details['description'] = all_articles[i]['description']
-                        if 'title' in all_articles:
+                        if 'title' in all_articles[i]:
                             movie_details['title'] = all_articles[i]['title']
-                        if 'content' in all_articles:
+                        if 'content' in all_articles[i]:
                             movie_details['content'] = all_articles[i]['content']
-                        if  'url' in all_articles:
+                        if  'url' in all_articles[i]:
                             movie_details['url'] = all_articles[i]['url']
                 self.all_news_data.append(movie_details)
                 news_df = pd.DataFrame(self.all_news_data,columns = self.newscolumns)
