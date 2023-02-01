@@ -23,11 +23,12 @@ class WebScrapper:
         self.file_name_movies = 'moviedata.csv'
         self.file_name_reviews = 'reviewdata.csv'
         self.file_name_ombd = 'ombddata.csv'
-        self.file_name_news = 'newsdata.csv'
+        self.file_name_news = 'newsapidata.csv'
         self.columns = ['MovieId','MovieName','Rating','Url','UserRatings']
         self.omdbcolumns = ['MovieId','Title','Year','Rated','Released','Runtime','Genre','Director','Writer','Actors','Plot','Language','Country'
         'Awards','Metascore','imdbRating','imdbVotes','BoxOffice']
         self.newscolumns = ['MovieId','description','title','content','url']
+        self.userreviewscolumns = ['MovieId','UserReviews']
         self.all_movies_reviews = []
         self.all_moview_ombd_reviews = []
         self.all_news_data = []
@@ -99,7 +100,8 @@ class WebScrapper:
                     error_url_list.append(url)
                     error_msg_list.append(e)
             review_df = pd.DataFrame({'MovieId' : movie_id_list,'UserReviews':review_list})
-            review_df.to_csv(self.file_name_reviews, mode='a', index=False)  
+            review_df.to_csv(self.file_name_reviews, mode='a', index=False,header=False) 
+        review_df.to_csv(self.file_name_reviews, mode='a',header=self.userreviewscolumns, index=False)     
 
     def openmoviedatabaseApi(self):
         url = 'http://www.omdbapi.com/'
@@ -181,10 +183,12 @@ class WebScrapper:
                         if  'url' in all_articles[i]:
                             movie_details['url'] = all_articles[i]['url']
                 self.all_news_data.append(movie_details)
-                news_df = pd.DataFrame(self.all_news_data,columns = self.newscolumns)
-                news_df.to_csv(self.file_name_news, mode='a', index=False)  
+                news_df = pd.DataFrame(self.all_news_data)
+                news_df.to_csv(self.file_name_news, mode='a', index=False,header=False)
+
             except Exception as exp:
                 print(f"error while hitting the news api",{exp})    
+        #news_df.to_csv(self.file_name_news, mode='a',header=self.newscolumns, index=False)          
 
 web_scrap = WebScrapper()      
 web_scrap.gettopMovies()
