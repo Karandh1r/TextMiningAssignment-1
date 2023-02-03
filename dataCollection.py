@@ -161,19 +161,20 @@ class WebScrapper:
     def getdatafromnewApi(self):
         url = 'https://newsapi.org/v2/everything'
         apiKey = '120b448077954edebc2caa99382602cb'
+        
         for i in range(len(self.all_movies_reviews)):
             try:
                 movie_string =  self.all_movies_reviews[i]['MovieName']
                 movie_id = self.all_movies_reviews[i]['MovieId']
                 params = {'q': movie_string, 
                     'apikey': apiKey}
-                response = requests.get(url, params=params)
-                movie_details = {}  
+                response = requests.get(url, params=params)  
                 if response.status_code == 200:
                     text_value = json.loads(response.text)
                     all_articles = text_value['articles']
-                    movie_details['MovieId'] = movie_id 
                     for i in range(len(all_articles)):
+                        movie_details = {}
+                        movie_details['MovieId'] = movie_id 
                         if 'description' in all_articles[i]:
                             movie_details['description'] = all_articles[i]['description']
                         if 'title' in all_articles[i]:
@@ -182,18 +183,17 @@ class WebScrapper:
                             movie_details['content'] = all_articles[i]['content']
                         if  'url' in all_articles[i]:
                             movie_details['url'] = all_articles[i]['url']
-                self.all_news_data.append(movie_details)
-                news_df = pd.DataFrame(self.all_news_data)
-                news_df.to_csv(self.file_name_news, mode='a', index=False,header=False)
-
+                        self.all_news_data.append(movie_details)
             except Exception as exp:
-                print(f"error while hitting the news api",{exp})    
+                print(f"error while hitting the news api",{exp})   
+        news_df = pd.DataFrame(self.all_news_data)
+        news_df.to_csv(self.file_name_news, mode='w', index=False,header=False)         
         #news_df.to_csv(self.file_name_news, mode='a',header=self.newscolumns, index=False)          
 
 web_scrap = WebScrapper()      
 web_scrap.gettopMovies()
-web_scrap.getuserReviews()      
-web_scrap.openmoviedatabaseApi()
+# web_scrap.getuserReviews()      
+# web_scrap.openmoviedatabaseApi()
 web_scrap.getdatafromnewApi()
 
 

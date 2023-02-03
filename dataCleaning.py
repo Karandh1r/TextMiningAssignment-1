@@ -20,7 +20,7 @@ class CleanData:
        
 
         #df_news.to_csv(self.file_name_news, header=self.newscolumns, index=False)
-        df_reviews.to_csv(self.file_name_reviews,header=self.userreviewscolumns,index=False)
+        df_reviews.reset_index().to_csv(self.file_name_reviews,header=self.userreviewscolumns,index=False)
 
         stop_words = stopwords.words('english')
         #clean all customer reviews from the data.
@@ -29,7 +29,7 @@ class CleanData:
         df_reviews['UserReviews'] = df_reviews['UserReviews'].apply(str.lower)
         df_reviews['UserReviews'] = df_reviews['UserReviews'].apply(lambda x: re.sub(r'[^\w\s]', '', x))
         df_reviews['UserReviews'] = df_reviews['UserReviews'].apply(lambda x: ' '.join(w for w in x.split() if w not in stop_words))
-
+        print(df_reviews.head)
         
         # df_reviews['UserReviews'] = df_reviews['UserReviews'].str.extract('([A-Za-z]+)', expand=True)
         # df_reviews['UserReviews'] = df_reviews['UserReviews'].str.extract('(\d+.\d)', expand=True)
@@ -37,7 +37,6 @@ class CleanData:
         # df_reviews['UserReviews'] = df_reviews['UserReviews'].apply(lambda x: re.sub(r'[^\w\s]', '', x))
         # df_reviews['UserReviews'] = df_reviews['UserReviews'].apply(lambda x: ' '.join(w for w in x.split() if w not in stop_words))
 
-        print(df_movies.describe())
 
 clean_data = CleanData()
 clean_data.cleanExceldata()
