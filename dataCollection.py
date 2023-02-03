@@ -6,6 +6,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 import json
+import re
+import nltk
+from nltk.corpus import stopwords
 import requests
 from tqdm import tqdm
 from scrapy.selector import Selector
@@ -58,7 +61,43 @@ class WebScrapper:
             review_df.to_csv(self.file_name_movies,index=False) 
         except Exception as exp:
             print(f"error while retrieving top 25 movies webscraping {exp})")    
-     
+
+    def readandCleanData(self,string_value):
+        stop_words = set(stopwords.words('english'))
+        string_value.lstrip()
+        string_value.rstrip()
+        string_value.strip()
+        file_arr = string_value.split(" ")
+        new_file_contents = []
+        for word in file_arr:
+            word = word.lower()
+            word = word.lstrip()
+            word = word.strip("\n")
+            word = word.replace(",","")
+            word = word.replace(" ","")
+            word = word.replace("_","")
+            word = re.sub('\+', ' ',word)
+            word = re.sub('.*\+\n', '',word)
+            word = re.sub('zz+', ' ',word)
+            word = word.replace("\t","")
+            word = word.replace(".","")
+            word = word.strip()
+            word = word.replace("'\'","")
+            if word not in ["", "\\", '"', "'", "*", ":", ";"]:
+                if not re.search(r'\d', word):
+                    if word not in stop_words:
+                        new_file_contents.append(word)
+            file_string_join = " ".join(new_file_contents)       
+            file_string_join = file_string_join.replace("\\n","")
+            file_string_join = file_string_join.strip("\\n")
+            file_string_join = file_string_join.replace("\\'","")
+            file_string_join = file_string_join.replace("\\","")
+            file_string_join = file_string_join.replace('"',"")
+            file_string_join = file_string_join.replace("'","")
+            file_string_join = file_string_join.replace("s'","")
+            file_string_join = file_string_join.lstrip()       
+        return file_string_join     
+
     def getuserReviews(self):
         for i in range(len(self.all_movies_reviews)):
             url = self.all_movies_reviews[i]['Url']
@@ -91,7 +130,8 @@ class WebScrapper:
                     sel2 = Selector(text = d.get_attribute('innerHTML'))
                     try:
                         review = sel2.css('.text.show-more__control::text').extract_first()
-                        review_list.append(review)
+                        filtered_review = self.readandCleanData(review)
+                        review_list.append(filtered_review)
                         movie_id_list.append(movie_Id)
                     except:
                         review = np.NaN
@@ -176,7 +216,8 @@ class WebScrapper:
                         movie_details = {}
                         movie_details['MovieId'] = movie_id 
                         if 'description' in all_articles[i]:
-                            movie_details['description'] = all_articles[i]['description']
+                            filtered_description = all_articles[i]['description']
+                            movie_details['description'] = self.readandCleanData(filtered_description)
                         if 'title' in all_articles[i]:
                             movie_details['title'] = all_articles[i]['title']
                         if 'content' in all_articles[i]:
@@ -187,13 +228,12 @@ class WebScrapper:
             except Exception as exp:
                 print(f"error while hitting the news api",{exp})   
         news_df = pd.DataFrame(self.all_news_data)
-        news_df.to_csv(self.file_name_news, mode='w', index=False,header=False)         
-        #news_df.to_csv(self.file_name_news, mode='a',header=self.newscolumns, index=False)          
-
+        news_df.to_csv(self.file_name_news, mode='w',header=self.newscolumns, index=False)         
+        
 web_scrap = WebScrapper()      
 web_scrap.gettopMovies()
-# web_scrap.getuserReviews()      
-# web_scrap.openmoviedatabaseApi()
+web_scrap.getuserReviews()      
+web_scrap.openmoviedatabaseApi()
 web_scrap.getdatafromnewApi()
 
 
