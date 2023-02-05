@@ -71,10 +71,12 @@
           <li><a href="#about"><span>About</span></a></li>
           <li><a href="#education"> <span>Education</span></a></li>
           <li><a href="#experience"> <span>Experience</span></a></li>
-          <li><a href="#portfolio"> <span>Projects</span></a></li>
+          <!--<li><a href="#portfolio"> <span>Projects</span></a></li>-->
           <li><a href="#skills"> <span>Skills</span></a></li>
-          <li><a href="https://docs.google.com/document/d/1yVY1CJzaZgcmTJ3BV5bxdpXdOWt8fyYSFczJuvs8CKM/edit?usp=sharing" target="_blank"> <span>Resume</span></a></li>
-          <li><a href="#contacts"> <span>Contact</span></a></li>
+          <!-- <li><a href="https://docs.google.com/document/d/1yVY1CJzaZgcmTJ3BV5bxdpXdOWt8fyYSFczJuvs8CKM/edit?usp=sharing" target="_blank"> <span>Resume</span></a></li>-->
+          <li><a href="#intro"><span>Introduction</span></a></li>
+          <li><a href="#data"><span>Data</span></a></li>
+          <li><a href="#contacts"> <span>Contact</span></a></li> 
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -107,7 +109,9 @@
           <p>Focused and enthusiastic developer with a keen interest in software development and Machine Learning. 
             I am a passionate individual who thrives to build and apply algorithms to solve real-world industry problems.
           </p>
-          <p><i>Life is a quick </i></p>
+          <p><i><b>Life is a quick it takes you the right pass in nth sort, so be patient untill you are choosen
+            as a pivot.
+          </b></i></p>
           <div class="row">
             <div class="col-lg-6">
               <ul>
@@ -385,7 +389,7 @@
 
 
   <!-- Start Project Section -->
-  <section id="portfolio" class="portfolio">
+  <!--<section id="portfolio" class="portfolio">
     <div class="container">
 
       <div class="section-title">
@@ -417,18 +421,6 @@
           </div>
         </div>
 
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Image recognition as Service</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/iras.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              
-              <div class="portfolio-links">
-                <a href="projects/iras.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <center><h4>Waveform Seperation</h4></center>
@@ -442,20 +434,7 @@
           </div>
         </div>
 
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Movie Recommender</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/recommender.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              
-              <div class="portfolio-links">
-                <a href="projects/recommender.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
         <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-          <!-- <br> -->
           <center><h4>Resume Section Classifier</h4></center>
           <div class="portfolio-wrap">
             <img src="assets/img/project/resume.jpg" class="img-fluid" alt="">
@@ -495,7 +474,6 @@
         
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-          <!-- <br> -->
           <center><h4>Image Generator</h4></center>
           <div class="portfolio-wrap">
             <img src="assets/img/project/gan.jpg" class="img-fluid" alt="">
@@ -509,7 +487,7 @@
 
       </div>
     </div>
-  </section>
+  </section>-->
 
   <!-- End Project Section -->
 
@@ -561,11 +539,118 @@
 
   <!-- End Skills Section -->
 
+ 
+  <!-- Start Introduction Section -->
 
+  <section id="intro" class="introduction">
+    <div class="container">
+      <div class="section-title">
+        <h2>Introduction</h2>
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <p style="color:#fff">
+              The goal of the project is to estimate the sentiment of the movie reviews and make a prediction whether
+              a user should go and watch the movie or not. A review can be either positive or negative which can
+              be a deciding factor that user should go to watch a movie or not.According to a survey in 2018, 63% adults 
+              indicated moderate to heavy reliance on online reviews before seeing a movie. While there is plenty of research 
+              focusing on review ratings and volume, there is relatively less understanding of how similarities in content posted 
+              by critics and general users impact consumers. Both movie critics and general users leave reviews on platforms, such 
+              as Rotten Tomatoes, IMDB ratings and content from these different sources plays a potential role in movie sales.
+            </p> 
+            <br><br> 
+            <p style="color:#fff">
+             
+            </p>
+            <br><br> 
+            <p style="color:#fff">
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> 
+    </div>
+  </section>
+   
+  <!-- End Introduction Section -->  
 
+  <!-- Start Data Section -->
+
+  <section id="data" class="datas">
+    <div class="container">
+      <div class="section-title">
+        <h2>Data</h2>
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <p style="color:#fff">
+              The dataset collection is done from the IMDB website
+              by web scraping the movies using a python package called as "BeautifulSoup" and "Selenium". The webscrapping 
+              of the data is done as the first step inorder to get the name of the movies along with their MovieId so that 
+              can be used as the primary key for the join operation between different csv's using the pandas join 
+              operation.
+            </p><br><br>
+            <p style="color:#fff">
+              The further steps includes getting the user reviews from the IMDB website. For this particular
+              task selenium is used as the webscrapping tool as an onlick events needs to performed inorder to 
+              extract the user reviews data. The user reviews are then passed through the preprocessing and cleaning
+              steps inorder to remove all the stopwords, punctuations and special symbols.
+            </p><br><br>
+            <p style="color:#fff">
+            The further steps include getting the user reviews from the IMDB website. For this particular task Selenium 
+            is used as the web scrapping tool as a click event needs to perform to extract the user reviews data. The user 
+            reviews are then passed through the preprocessing and cleaning steps to remove all the stopwords, punctuations, 
+            and special symbols.
+            </p>
+            <br><br>
+            <p style="color:#fff">
+            The next step involved lemmatization, stemming, TFIDF vectorization, and Count vectorization. The important features
+            are extracted from the methods and used to produce the tag clouds.
+            </p>
+            <br><br>  
+            <p style="color:#fff">
+              The below tag clouds are created based on the description column from the news API and the user reviews column from 
+              the OMDB API.
+            </p>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/userReviewsCountVec.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
+            action movies. Moreover, some of the other common words also consist of act, and actor which are 
+            commonly used words in the movies. The result is based on extracting the features using the 
+            count vectorizer technique.
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/userreviewsTFIDF.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>
+              The other tag cloud is based on extracting the features from the TFIDF vectoriser, the tag cloud
+              shows that most frequent words in the tag cloud includes ring, obvious, academic, robbin.
+            </p>
+        </div>
+       </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End Data Section -->
 
   <!-- Start Links section -->
-  <section id="links" class="services">
+  <!--<section id="links" class="services">
     <div class="container">
       <div class="section-title">
         <h2>Resume & Links</h2>
@@ -583,7 +668,8 @@
         </div>
       </div>
     </div>
-  </section> <!--End Links Section -->
+  </section> <!--End Links Section -->-->
+
 
 
   <!-- Start Contact Section -->
@@ -638,6 +724,8 @@
       </div>
     </div>
   </section>
+
+
 
   <!-- End Contact Section -->
 

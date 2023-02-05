@@ -731,6 +731,85 @@ section .container {
 }
 
 /*--------------------------------------------------------------
+# Introduction
+--------------------------------------------------------------*/
+.introduction .icon-box {
+  text-align: center;
+  background: #09203a;
+  padding: 40px 40px;
+  transition: all ease-in-out 0.3s;
+  margin: 10px
+}
+.introduction .icon-box:hover {
+  background: #042e5f;
+  border-color: #1c7d32;
+}
+
+.introduction .icon-box:hover .icon {
+  background: #fff;
+}
+
+.introduction .icon-box:hover .icon i {
+  color: #1c7d32;
+}
+
+.introduction .icon-box:hover .icon::before {
+  background: #35e888;
+}
+
+.introduction .icon-box:hover h4 a, .introduction .icon-box:hover p {
+  color: #12d640;
+}
+.introduction p {
+  line-height: 24px;
+  font-size: 25px;
+  margin-bottom: 0;
+  word-wrap: break-word;
+  font-size: 20px;
+  text-transform: none;
+  text-align: left;
+}
+/*--------------------------------------------------------------
+# Data
+--------------------------------------------------------------*/
+
+.datas .icon-box {
+  text-align: center;
+  background: #09203a;
+  padding: 40px 40px;
+  transition: all ease-in-out 0.3s;
+  margin: 10px
+}
+.datas .icon-box:hover {
+  background: #042e5f;
+  border-color: #1c7d32;
+}
+
+.datas .icon-box:hover .icon {
+  background: #fff;
+}
+
+.datas .icon-box:hover .icon i {
+  color: #1c7d32;
+}
+
+.datas .icon-box:hover .icon::before {
+  background: #35e888;
+}
+
+.datas .icon-box:hover h4 a, .datas .icon-box:hover p {
+  color: #12d640;
+}
+.datas p {
+  line-height: 24px;
+  font-size: 25px;
+  margin-bottom: 0;
+  word-wrap: break-word;
+  font-size: 20px;
+  text-transform: none;
+  text-align: left;
+}
+/*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {

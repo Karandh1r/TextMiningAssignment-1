@@ -54,6 +54,19 @@ class CleanData:
         words = [ps.stem(word) for word in words]
         return ' '.join(words)
 
+    def visualizeCountVect(self) -> None:
+        text = " ".join(title for title in self.countvectorisecolumns)
+        word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
+        plt.imshow(word_cloud, interpolation='bilinear')
+        plt.axis("off")
+        plt.show()
+
+    def visualizeTfidfVect(self) -> None:
+        text = " ".join(title for title in self.visualizetfidfcolumns)
+        word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
+        plt.imshow(word_cloud, interpolation='bilinear')
+        plt.axis("off")
+        plt.show()
 
     def cleanExceldata(self) -> None:
         df_movies = pd.read_csv(self.file_name_movies)
@@ -71,21 +84,7 @@ class CleanData:
         self.countVectoriser(df_reviews,'UserReviews')
         self.tfidfvectorizer(df_reviews,'UserReviews')
 
-    def visualizeCountVect(self) -> None:
-        text = " ".join(title for title in self.countvectorisecolumns)
-        word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
-        plt.imshow(word_cloud, interpolation='bilinear')
-        plt.axis("off")
-        plt.show()
-
-    def visualizeTfidfVect(self) -> None:
-        text = " ".join(title for title in self.visualizetfidfcolumns)
-        word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
-        plt.imshow(word_cloud, interpolation='bilinear')
-        plt.axis("off")
-        plt.show()
-
-
+   
 clean_data = CleanData()
 clean_data.cleanExceldata()
 clean_data.visualizeCountVect()
