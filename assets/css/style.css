@@ -762,12 +762,12 @@ section .container {
 }
 .introduction p {
   line-height: 24px;
-  font-size: 25px;
   margin-bottom: 0;
   word-wrap: break-word;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: none;
   text-align: left;
+  font-weight: normal;
 }
 /*--------------------------------------------------------------
 # Data
@@ -802,12 +802,12 @@ section .container {
 }
 .datas p {
   line-height: 24px;
-  font-size: 25px;
+  font-size: 18px;
   margin-bottom: 0;
   word-wrap: break-word;
-  font-size: 20px;
   text-transform: none;
-  text-align: left;
+  text-align: left; 
+  font-weight: normal;
 }
 /*--------------------------------------------------------------
 # Portfolio
