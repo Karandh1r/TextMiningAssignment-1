@@ -18,7 +18,7 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 
 class WebScrapper:
     def __init__(self):
-        self.url = 'https://www.imdb.com/chart/top/?ref_=nv_mv_250'
+        self.url = 'https://www.imdb.com/search/title/?title_type=feature&year=2020-01-01,2020-12-31&sort=year,asc'
         self.parser = 'html.parser'
         self.header_list = ['Sno','MovieName','MovieRating','MovieUrl','MovieUserRating']
         self.prefix = 'https://www.imdb.com' 
@@ -27,7 +27,7 @@ class WebScrapper:
         self.file_name_reviews = 'reviewdata.csv'
         self.file_name_ombd = 'ombddata.csv'
         self.file_name_news = 'newsapidata.csv'
-        self.columns = ['MovieId','MovieName','Rating','Url','UserRatings']
+        self.columns = ['MovieId','MovieName','Url']
         self.omdbcolumns = ['MovieId','Title','Year','Rated','Released','Runtime','Genre','Director','Writer','Actors','Plot','Language','Country'
         'Awards','Metascore','imdbRating','imdbVotes','BoxOffice']
         self.newscolumns = ['MovieId','description','title','content','url']
@@ -40,22 +40,18 @@ class WebScrapper:
         try:  
             response = requests.get(self.url) 
             data = BeautifulSoup(response.text,self.parser)
-            all_movie_list = data.find_all('tr')
+            all_movie_list = data.find_all('div',{'class' : 'lister-item mode-advanced'})
             header_list = self.header_list
             all_movies_reviews = []
             prefix = 'https://www.imdb.com'
             suffix = 'reviews/?ref_=tt_ql_urv'
             for movie in all_movie_list[1:21]:
                 movie_review = {}
-                movie_name = movie.find('td',{'class' : 'titleColumn'}).a.text
-                movie_rating = movie.find('td',{'class' : 'ratingColumn'}).strong.text
-                movie_url = movie.find('td',{'class' : 'titleColumn'}).a['href']
-                movie_user_rating = movie.find('td',{'class': 'ratingColumn'}).strong['title']
+                movie_name = movie.find('div',{'class' : 'lister-item-content'}).h3.a.text
+                movie_url = movie.find('div',{'class' : 'lister-item-content'}).a['href']
                 movie_review['MovieId'] = movie_url.split("/")[2]
                 movie_review['MovieName'] = movie_name
-                movie_review['Rating'] = movie_rating
                 movie_review['Url'] = prefix + movie_url + suffix
-                movie_review['UserRatings'] = movie_user_rating.split(" ")[3]
                 self.all_movies_reviews.append(movie_review) 
             review_df = pd.DataFrame(self.all_movies_reviews,columns = self.columns)
             review_df.to_csv(self.file_name_movies,index=False) 
@@ -218,6 +214,7 @@ class WebScrapper:
                         if 'description' in all_articles[i]:
                             filtered_description = all_articles[i]['description']
                             movie_details['description'] = self.readandCleanData(filtered_description)
+                          
                         if 'title' in all_articles[i]:
                             movie_details['title'] = all_articles[i]['title']
                         if 'content' in all_articles[i]:
