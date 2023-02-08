@@ -126,8 +126,8 @@ class WebScrapper:
                     sel2 = Selector(text = d.get_attribute('innerHTML'))
                     try:
                         review = sel2.css('.text.show-more__control::text').extract_first()
-                        filtered_review = self.readandCleanData(review)
-                        review_list.append(filtered_review)
+                        # filtered_review = self.readandCleanData(review)
+                        review_list.append(review)
                         movie_id_list.append(movie_Id)
                     except:
                         review = np.NaN
@@ -213,8 +213,8 @@ class WebScrapper:
                         movie_details['MovieId'] = movie_id 
                         if 'description' in all_articles[i]:
                             filtered_description = all_articles[i]['description']
-                            movie_details['description'] = self.readandCleanData(filtered_description)
-                          
+                            # movie_details['description'] = self.readandCleanData(filtered_description)
+                            movie_details['description'] = filtered_description
                         if 'title' in all_articles[i]:
                             movie_details['title'] = all_articles[i]['title']
                         if 'content' in all_articles[i]:
