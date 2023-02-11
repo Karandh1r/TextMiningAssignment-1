@@ -69,7 +69,7 @@ class CleanData:
         plt.show()
 
     def cleanExceldata(self) -> None:
-        df_movies = pd.read_csv(self.file_name_movies)
+        
         df_reviews = pd.read_csv(self.file_name_reviews)
         df_ombd = pd.read_csv(self.file_name_ombd)
         df_news = pd.read_csv(self.file_name_news)

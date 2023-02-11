@@ -234,4 +234,3 @@ web_scrap.openmoviedatabaseApi()
 web_scrap.getdatafromnewApi()
 
 
-
