@@ -88,6 +88,6 @@ class CleanData:
 clean_data = CleanData()
 clean_data.cleanExceldata()
 clean_data.visualizeCountVect()
-#clean_data.visualizeTfidfVect()
+clean_data.visualizeTfidfVect()
 
          
