@@ -2,13 +2,16 @@ import requests
 import pandas as pd
 import json
 import random as rd
+import re
 import sklearn
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import confusion_matrix    
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
+from sklearn import tree
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 import graphviz 
@@ -70,6 +73,10 @@ class MLmodels:
         print(cnf_matrix1)  
 
     def DecisionTreeClassifier(self):
+        df_reviews = pd.read_csv(self.filtered_reviews)
+        x = df_reviews['UserReviews']
+        y = df_reviews['Sentiment']
+        x_train, x_test, y_train, y_test = train_test_split(x,y, stratify=y, test_size=0.25, random_state=42)
         MyDT = DecisionTreeClassifier(criterion='entropy',
                             splitter='best',
                             max_depth=None, 
@@ -80,77 +87,113 @@ class MLmodels:
                             random_state=None, 
                             max_leaf_nodes=None, 
                             min_impurity_decrease=0.0, 
-                            min_impurity_split=None, 
                             class_weight=None)
+        
+
+                  
+        MyDT.fit(eval(temp1), eval(temp2))
+        tree.plot_tree(MyDT)
+        plt.savefig(temp1)
+        feature_names=eval(str(temp1+".columns"))
+        dot_data = tree.export_graphviz(MyDT, out_file=None,
+                            feature_names=eval(str(temp1+".columns")),   
+                            filled=True, rounded=True,  
+                            special_characters=True)                                    
+        graph = graphviz.Source(dot_data) 
+        tempname=str("Graph" + str(i))
+        graph.render(tempname) 
+        print("\nActual for DataFrame: ", i, "\n")
+        print(eval(temp2))
+        print("Prediction\n")
+        DT_pred=MyDT.predict(eval(temp3))
+        print(DT_pred)
+           
+        bn_matrix = confusion_matrix(eval(temp4), DT_pred)
+        print("\nThe confusion matrix is:")
+        print(bn_matrix)
+        FeatureImp=MyDT.feature_importances_   
+        indices = np.argsort(FeatureImp)[::-1]
+          
+        for f in range(x_train.shape[1]):
+            if FeatureImp[indices[f]] > 0:
+                print("%d. feature %d (%f)" % (f + 1, indices[f], FeatureImp[indices[f]]))
+                print ("feature name: ", feature_names[indices[f]])
+                                    
+
+
 
     def SVM(self):
         df_reviews = pd.read_csv(self.filtered_reviews)
         print(df_reviews.columns)
         x = df_reviews['UserReviews']
         y = df_reviews['Sentiment']
-        x, x_test, y, y_test = train_test_split(x,y, stratify=y, test_size=0.25, random_state=42)
+        x_train, x_test, y_train, y_test = train_test_split(x,y, stratify=y, test_size=0.25, random_state=42)
         SVM_Model = LinearSVC(C=1)
-        vec = CountVectorizer(stop_words='english')
-        x = vec.fit_transform(x).toarray()
-        x_test = vec.transform(x_test).toarray() 
-        SVM_Model.fit(x, y)
-        self.plot_coefficients(SVM_Model, vec.get_feature_names())
-        print("SVM prediction using Linear Kernel:\n", SVM_Model.predict(x_test))
-        print("SVM score using the Linear Kernel:\n",SVM_Model.score(x_test,y_test))
+        
+        vectorizer = TfidfVectorizer(token_pattern=u'(?ui)\\b\\w*[a-z]+\\w*\\b',stop_words='english')
+        vectorizer.fit_transform(df_reviews['UserReviews'])
+
+        Train_X_Tfidf = vectorizer.transform(x_train)
+        Test_X_Tfidf = vectorizer.transform(x_test)
+
+                            
+        SVM_Model.fit(Train_X_Tfidf, y_train)
+        print("SVM prediction using Linear Kernel:\n", SVM_Model.predict(Test_X_Tfidf))
+        print("SVM score using the Linear Kernel:\n",SVM_Model.score(Test_X_Tfidf,y_test))
         print("Actual:")
         print(y_test)
-        SVM_matrix = confusion_matrix(y_test, SVM_Model.predict(x_test))
+        SVM_matrix = confusion_matrix(y_test, SVM_Model.predict(Test_X_Tfidf))
         print("\nThe confusion matrix is:")
         print(SVM_matrix)
         print("\n\n")
  
         SVM_Model2 = sklearn.svm.SVC(C=50, kernel='rbf', 
                            verbose=True, gamma="auto")                    
-        SVM_Model2.fit(x, y)
-        print("SVM prediction using Radial Basis function Kernel :\n", SVM_Model2.predict(x_test))
-        print("SVM score using the Radial Basis function Kernel:\n",SVM_Model2.score(x_test,y_test))
+        SVM_Model2.fit(Train_X_Tfidf, y_train)
+        print("SVM prediction using Radial Basis function Kernel :\n", SVM_Model2.predict(Test_X_Tfidf))
+        print("SVM score using the Radial Basis function Kernel:\n",SVM_Model2.score(Test_X_Tfidf,y_test))
         print("Actual:")
         print(y_test)
         print("RBF  :\n")
-        SVM_matrix2 = confusion_matrix(y_test, SVM_Model2.predict(x_test))
+        SVM_matrix2 = confusion_matrix(y_test, SVM_Model2.predict(Test_X_Tfidf))
         print("\nThe confusion matrix is:")
         print(SVM_matrix2)
         print("\n\n")
 
         SVM_Model3=sklearn.svm.SVC(C=100, kernel='poly',degree=3,
                            gamma="auto", verbose=True)
-        SVM_Model3.fit(x, y)
-        print("SVM prediction using Polynomial Kernel :\n",SVM_Model3.predict(x_test))
-        print("SVM score using Polynomial Kernel:\n",SVM_Model2.score(x_test,y_test))
+        SVM_Model3.fit(Train_X_Tfidf, y_train)
+        print("SVM prediction using Polynomial Kernel :\n",SVM_Model3.predict(Test_X_Tfidf))
+        print("SVM score using Polynomial Kernel:\n",SVM_Model2.score(Test_X_Tfidf,y_test))
         print("Actual:")
         print(y_test)
         print("RBF  :\n")
-        SVM_matrix3 = confusion_matrix(y_test, SVM_Model3.predict(x_test))
+        SVM_matrix3 = confusion_matrix(y_test, SVM_Model3.predict(Test_X_Tfidf))
         print("\nThe confusion matrix is:")
         print(SVM_matrix3)
         print("\n\n")
 
-    def plot_coefficients(classifier, feature_names, top_features=10):
-    ## Model if SVM MUST be SVC, RE: SVM_Model=LinearSVC(C=10)
-        coef = classifier.coef_.ravel()
+        top_features = 10
+        COLNAMES = vectorizer.get_feature_names()
+        coef = SVM_Model.coef_.ravel()
         top_positive_coefficients = np.argsort(coef,axis=0)[-top_features:]
-        print(top_positive_coefficients)
+        top_positive_coefficients = top_positive_coefficients[top_positive_coefficients < 3451]
+
         top_negative_coefficients = np.argsort(coef,axis=0)[:top_features]
-        print(top_negative_coefficients)
+        top_negative_coefficients = top_negative_coefficients[top_negative_coefficients < 3451]
+
         top_coefficients = np.hstack([top_negative_coefficients, top_positive_coefficients])
         # create plot
         plt.figure(figsize=(15, 5))
         colors = ["red" if c < 0 else "blue" for c in coef[top_coefficients]]
-        plt.bar(  x=  np.arange(2 * top_features)  , height=coef[top_coefficients], width=.5,  color=colors)
-        feature_names = np.array(feature_names)
-        plt.xticks(np.arange(0, (2*top_features)), feature_names[top_coefficients], rotation=60, ha="right")
+        plt.bar(x=  np.arange(len(top_coefficients))  , height=coef[top_coefficients], width=.5,  color=colors)
+        feature_names = np.array(COLNAMES)
+        plt.xticks(np.arange(0, len(top_coefficients)), feature_names[top_coefficients], rotation=60, ha="right")
         plt.show()
-    
-
- 
+        
+     
 ml_models = MLmodels()
 # ml_models.labeldata()
 #ml_models.NaiveBayes()
-#ml_models.DecisionTreeClassifier()
-ml_models.SVM()
-ml_models.plot_coefficients()
+ml_models.DecisionTreeClassifier()
+#ml_models.SVM()
