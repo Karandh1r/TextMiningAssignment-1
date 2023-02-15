@@ -76,10 +76,16 @@ class MLmodels:
         df_reviews = pd.read_csv(self.filtered_reviews)
         x = df_reviews['UserReviews']
         y = df_reviews['Sentiment']
+        
         x_train, x_test, y_train, y_test = train_test_split(x,y, stratify=y, test_size=0.25, random_state=42)
+        vectorizer = TfidfVectorizer(token_pattern=u'(?ui)\\b\\w*[a-z]+\\w*\\b',stop_words='english')
+        vectorizer.fit_transform(df_reviews['UserReviews'])
+
+        Train_X_Tfidf = vectorizer.transform(x_train)
+        Test_X_Tfidf = vectorizer.transform(x_test)
         MyDT = DecisionTreeClassifier(criterion='entropy',
                             splitter='best',
-                            max_depth=None, 
+                            max_depth=7, 
                             min_samples_split=2, 
                             min_samples_leaf=1, 
                             min_weight_fraction_leaf=0.0, 
@@ -89,38 +95,32 @@ class MLmodels:
                             min_impurity_decrease=0.0, 
                             class_weight=None)
         
-
                   
-        MyDT.fit(eval(temp1), eval(temp2))
+        MyDT.fit(Train_X_Tfidf, y_train)
         tree.plot_tree(MyDT)
-        plt.savefig(temp1)
-        feature_names=eval(str(temp1+".columns"))
+        feature_names = vectorizer.get_feature_names_out() 
         dot_data = tree.export_graphviz(MyDT, out_file=None,
-                            feature_names=eval(str(temp1+".columns")),   
+                            feature_names= feature_names,   
                             filled=True, rounded=True,  
                             special_characters=True)                                    
         graph = graphviz.Source(dot_data) 
-        tempname=str("Graph" + str(i))
+        tempname=str("Graph")
         graph.render(tempname) 
-        print("\nActual for DataFrame: ", i, "\n")
-        print(eval(temp2))
+        
         print("Prediction\n")
-        DT_pred=MyDT.predict(eval(temp3))
+        DT_pred=MyDT.predict(Test_X_Tfidf)
         print(DT_pred)
            
-        bn_matrix = confusion_matrix(eval(temp4), DT_pred)
+        bn_matrix = confusion_matrix(y_test, DT_pred)
         print("\nThe confusion matrix is:")
         print(bn_matrix)
         FeatureImp=MyDT.feature_importances_   
         indices = np.argsort(FeatureImp)[::-1]
           
-        for f in range(x_train.shape[1]):
+        for f in range(x_train.shape[0]):
             if FeatureImp[indices[f]] > 0:
                 print("%d. feature %d (%f)" % (f + 1, indices[f], FeatureImp[indices[f]]))
                 print ("feature name: ", feature_names[indices[f]])
-                                    
-
-
 
     def SVM(self):
         df_reviews = pd.read_csv(self.filtered_reviews)
