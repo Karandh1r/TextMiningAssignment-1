@@ -29,6 +29,7 @@ class Kmeans:
         combined_df = combined_df[combined_df['Metascore']>0]
 
         selected_dataset = combined_df[['BoxOffice', 'Metascore']]
+        print(selected_dataset)
 
         kmeans_object_Count = KMeans(n_clusters=3)
         kmeans_object_Count.fit(selected_dataset)
