@@ -34,6 +34,7 @@
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169007209-3"></script>
+  
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -74,22 +75,26 @@
           <!--<li><a href="#portfolio"> <span>Projects</span></a></li>-->
           <li><a href="#skills"> <span>Skills</span></a></li>
           <!-- <li><a href="https://docs.google.com/document/d/1yVY1CJzaZgcmTJ3BV5bxdpXdOWt8fyYSFczJuvs8CKM/edit?usp=sharing" target="_blank"> <span>Resume</span></a></li>-->
-          <li><a href="#intro"><span>Introduction</span></a></li>
-          <div class="dropdown">
-            <button class="dropbtn">Dropdown 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </div> 
+          <!-- <li><a href="#intro"><span>Introduction</span></a></li> -->
+          <!-- <li><a href="#data"><span>Data</span></a></li> -->
           <li><a href="#contacts"> <span>Contact</span></a></li> 
-
+          <li class="nav-item dropdown">
+            <a style="margin:-8px" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              TextMining
+            </a>
+            <div style="background-color:#424242;padding:8px;" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#intro">Introduction</a>
+              <a class="dropdown-item" href="#data">Data</a>
+              <a class="dropdown-item" href="#">Clustering</a>
+              <a class="dropdown-item" href="#">ARM</a>
+              <a class="dropdown-item" href="#">LDA</a>
+              <a class="dropdown-item" href="#">Naive Bayes</a>
+              <a class="dropdown-item" href="#">Decision Tree</a>
+              <a class="dropdown-item" href="#">SVM</a>
+            </div>
+          </li>
         </ul>
       </nav><!-- .nav-menu -->
-
       <div class="social-links">
           <a href="https://www.linkedin.com/in/karandh1r/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
           <a href="https://github.com/karan1dhir" target="_blank" class="github"><i class="bx bxl-github"></i></a>
