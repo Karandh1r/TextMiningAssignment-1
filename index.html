@@ -831,7 +831,7 @@
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
            <p>
-              The figuere shows that the optimal K that we should use inorder to perform the Hierarchical
+              The figuere shows that the optimal K ie 2 that we should use inorder to perform the Hierarchical
               clustering using the Silhouette method.
             </p>
         </div>
@@ -879,7 +879,6 @@
     </div>
   </section> 
   <!-- End of Clustering Section-->
-
 
   <!--Associate Rule Mining-->
   <section id="arm" class="datas">
@@ -986,14 +985,13 @@
            </p>
         </div>
        </div>
-       <br><br>
        <div class="row">
         <div class="col-lg-4" data-aos="fade-right">
            <img src="assets/img/data/support.PNG" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>The rules extracted from the Apriori Algorithm where the rules are sorted by support.
+           <p>The rules extracted from the Apriori Algorithm where the rules are sorted by Support.
            </p>
         </div>
        </div>
@@ -1011,33 +1009,19 @@
           <div class="col-lg-12" data-aos="fade-up">
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
             <p style="color:#fff">
-              The dataset collection is done from the IMDB website
-              by web scraping the movies using a python package called as "BeautifulSoup" and "Selenium". The webscrapping 
-              of the data is done as the first step inorder to get the name of the movies along with their MovieId so that 
-              can be used as the primary key for the join operation between different csv's using the pandas join 
-              operation.
+              Latent Dirichlet Allocation is referred to as LDA. Data is growing exponentially as time goes by. 
+              A significant portion of the data is unstructured, and some of it is unlabeled. Manually labeling 
+              each and every piece of data is a laborious effort. If not manually, how can we label such a vast 
+              amount of data? The LDA is here to save the day. One topic modeling technique used to examine a 
+              large quantity of data, divide the data into related groups, and label each group is LDA. It should 
+              be mentioned that the LDA technique is for unsupervised learning, which uses grouping data into 
+              related subjects to label the data. Contrary to other clustering techniques, such as K-Means clustering, 
+              which leverage the idea of distance between.
             </p><br><br>
             <p style="color:#fff">
-              The further steps includes getting the user reviews from the IMDB website. For this particular
-              task selenium is used as the webscrapping tool as an onlick events needs to performed inorder to 
-              extract the user reviews data. The user reviews are then passed through the preprocessing and cleaning
-              steps inorder to remove all the stopwords, punctuations and special symbols.
-            </p><br><br>
-            <p style="color:#fff">
-            The further steps include getting the user reviews from the IMDB website. For this particular task Selenium 
-            is used as the web scrapping tool as a click event needs to perform to extract the user reviews data. The user 
-            reviews are then passed through the preprocessing and cleaning steps to remove all the stopwords, punctuations, 
-            and special symbols.
-            </p>
-            <br><br>
-            <p style="color:#fff">
-            The next step involved lemmatization, stemming, TFIDF vectorization, and Count vectorization. The important features
-            are extracted from the methods and used to produce the tag clouds.
-            </p>
-            <br><br>  
-            <p style="color:#fff">
-              The below tag clouds are created based on the description column from the news API and the user reviews column from 
-              the OMDB API.
+              Before applying the algorithm of LDA, the data cleaning is done in-order to remove all the stopwords,
+              punctuations and the adjectives and after that the technique of LDA is being applied. The technique
+              of the LDA provides the distribution curve for different words across the documents.
             </p>
             <br><br>
             <p style="color:#fff"> 
@@ -1065,11 +1049,135 @@
   </section>
   <!--End of Latent Dirichlet Allocation-->
 
+  <!-- Naive Bayes Section-->
+  <section id="naive" class="datas">
+    <div class="container">
+      <div class="section-title">
+        <h2>Data</h2>
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <p style="color:#fff">
+              The words Naive and Bayes, which make up the Nave Bayes algorithm, are as follows: 
+              Because it presumes that the occurrence of one trait is unrelated to the occurrence of other 
+              features, it is referred to as naive. A red, spherical, sweet fruit, for instance, is recognized 
+              as an apple if the fruit is identified based on its color, form, and flavor. Hence, without relying 
+              on one another, each characteristic helps to recognize it as an apple. 
+              Because it relies on the Bayes' Theorem concept, it is known as the Bayes principle.
+            </p><br><br>
+            <p style="color:#fff">
+              Using Bayes theorem, we can find the probability of A happening, given that B has occurred. Here, 
+              B is the evidence and A is the hypothesis. The assumption made here is that the predictors/features 
+              are independent. That is presence of one particular feature does not affect the other. Hence it is 
+              called naive.
+              <br><br>
+              P(A/B) = P(B/A)P(A)/P(B)
+            </p>
+            <p style="color:#fff">
 
+            </p>
+            <br><br>
+            <p style="color:#fff"> 
+              <a href="https://github.com/Karandh1r/TextMiningAssignment-1/blob/master/Models2.py">Naive Bayes</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/NaiveBayes.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
+            action movies. Moreover, some of the other common words also consist of act, and actor which are 
+            commonly used words in the movies. The result is based on extracting the features using the 
+            count vectorizer technique.
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/filtered_Data.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>
+            Cleaned data for all the userReviews, MovieId and the Sentiment. The sentiment is obtained using
+            the Api for the analysis which can be positive,negative or neutral.
+           </p>
+        </div>
+       </div>
+    </div>
+  </section>
+  <!--End of Naive Bayes Allocation-->
 
-
-
-
+  <!-- Decision Tree Section-->
+  <section id="decision" class="datas">
+    <div class="container">
+      <div class="section-title">
+        <h2>Data</h2>
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <p style="color:#fff">
+              A supervised learning method used in statistics, data mining, and machine learning is decision tree learning. 
+              In this formalization, inferences about a set of data are made using a classification or regression decision tree as 
+              a predictive model. Classification trees are tree models where the target variable can take a discrete range of values. 
+              In these tree structures, the leaves correspond to class labels and the branches to the attributes that combine to form 
+              those class labels. Regression trees are decision trees when the target variable can take continuous values (usually real numbers).
+              More broadly, the idea of a regression tree can be used to any type of object that has pairwise differences, including 
+              categorical sequences.
+            </p><br><br>
+            <p style="color:#fff">
+              A decision tree is drawn upside down with its root at the top. In the image on the left, the bold text in black represents 
+              a condition/internal node, based on which the tree splits into branches/ edges. The end of the branch that doesn’t 
+              split anymore is the decision/leaf, in this case, whether the passenger died or survived, represented as red and green 
+              text respectively.
+              <br><br>
+              The impurity calculation of the decision tree can be based on the gini index or the entropy loss. The gini
+              criterion is much faster as compared to the entropy loss criterion.
+            </p>
+            <br><br>
+            <p style="color:#fff"> 
+              <a href="https://github.com/Karandh1r/TextMiningAssignment-1/blob/master/Models2.py">Decision Tree</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Decision_2.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
+            action movies. Moreover, some of the other common words also consist of act, and actor which are 
+            commonly used words in the movies. The result is based on extracting the features using the 
+            count vectorizer technique.
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Decision1.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
+            action movies. Moreover, some of the other common words also consist of act, and actor which are 
+            commonly used words in the movies. The result is based on extracting the features using the 
+            count vectorizer technique.
+           </p>
+        </div>
+       </div>
+    </div>
+  </section>
+  <!--End of Decision Tree Section-->
 
 
   <!-- Start Links section -->
