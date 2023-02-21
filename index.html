@@ -85,12 +85,12 @@
             <div style="background-color:#424242;padding:8px;" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#intro">Introduction</a>
               <a class="dropdown-item" href="#data">Data</a>
-              <a class="dropdown-item" href="#">Clustering</a>
-              <a class="dropdown-item" href="#">ARM</a>
-              <a class="dropdown-item" href="#">LDA</a>
-              <a class="dropdown-item" href="#">Naive Bayes</a>
-              <a class="dropdown-item" href="#">Decision Tree</a>
-              <a class="dropdown-item" href="#">SVM</a>
+              <a class="dropdown-item" href="#cluster">Clustering</a>
+              <a class="dropdown-item" href="#arm">ARM</a>
+              <a class="dropdown-item" href="#lda">LDA</a>
+              <a class="dropdown-item" href="#naive">Naive Bayes</a>
+              <a class="dropdown-item" href="#decision">Decision Tree</a>
+              <a class="dropdown-item" href="#svm">SVM</a>
             </div>
           </li>
         </ul>
@@ -737,6 +737,340 @@
   </section>
 
   <!-- End Data Section -->
+
+
+  <!-- Clustering Section -->
+  <section id="cluster" class="datas">
+    <div class="container">
+      <div class="section-title">
+        <h2>Data</h2>
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <p style="color:#fff">
+              Unsupervised learning techniques like clustering require the use of unlabeled datasets for the references. In general, 
+              it is utilized to record the grouping, underlying processes, and meaningful structure of a dataset. For 
+              clustering, the population must be split up into a number of groups so that the data points within each 
+              group are more similar to one another than the data points within other groups. It is, in essence, 
+              a grouping of items based on their similarities and differences.
+            </p><br><br>
+            <p style="color:#fff">
+              The selected columns for the k-means clustering includes BoxOffice and Metascore and thus classification
+              is done and categorization is done into 3 clusters. 
+            </p><br><br>
+            <p style="color:#fff">
+              K-Means clustering is an unsupervised learning algorithm. There is no labeled data for this clustering, 
+              unlike in supervised learning. K-Means performs the division of objects into clusters that share similarities
+              and are dissimilar to the objects belonging to another cluster. 
+            </p>
+            <br><br>
+            <p style="color:#fff">
+              An unsupervised learning technique for clustering data points is hierarchical clustering. The method calculates 
+              clusters based on how different the data are from one another. Unsupervised learning eliminates the need to 
+              train a model and eliminates the requirement for a "target" variable. All data can be shown and the relationship 
+              between individual data points can be interpreted using this method.
+            </p>
+            <br><br>  
+            <p style="color:#fff"> 
+              <a href="https://github.com/Karandh1r/TextMiningAssignment-1/blob/master/Models1.py">K-means Clustering</a>
+              <br>
+              <a href="https://github.com/Karandh1r/TextMiningAssignment-1/blob/master/Hclustering.r">Hierarchical Clustering</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/OmdbDataset.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>The figures shows the dataset on which the k-means clustering algorithm is performed.
+            The code uses 2 columns from the dataset inorder to classify the points. The columns which
+            are selected for this purpose includes BoxOffice and Metascore as the measure for the 
+            classification task.
+           </p>
+        </div>
+       </div>
+       <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/K-mean.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>The figures shows K-means clusters based on the dataset provided. The figure shows
+            3 clusters that has been classified as green, voilet and yellow and with their corresponding
+            centers. 
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/nclusterCosine.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>
+              The figure shows the HClustering technique R using the cosine similarity as the distance measure. Some 
+              of the key points for the differences from the k means clustering involves one can stop at any number of 
+              clusters one find appropriate by interpreting the dendrogram. The process involves beginning with one 
+              cluster that includes all the records and Hierarchical methods are especially useful when the target is 
+              to arrange the clusters into a natural hierarchy. One of the disadvantage for this process is that is requires 
+              the computation and storage of an NXN distance matrix.   
+            </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Optimalclusters.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>
+              The figuere shows that the optimal K that we should use inorder to perform the Hierarchical
+              clustering using the Silhouette method.
+            </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Euclidean.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>
+              The figure show performing out the clustering technique using the 2 centered clustering
+              assignmeng using the Euclidean distance as the distance measure.
+            </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Euclidean2.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>
+              The The figure show performing out the clustering technique using the 3 centered clustering
+              assignmeng using spearman as the distance measure.
+            </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Spearman.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>
+            The The figure show performing out the clustering technique using the 4 centered clustering
+            assignmeng using spearman as the distance measure.
+            </p>
+        </div>
+       </div>
+      </div>
+    </div>
+  </section> 
+  <!-- End of Clustering Section-->
+
+
+  <!--Associate Rule Mining-->
+  <section id="arm" class="datas">
+    <div class="container">
+      <div class="section-title">
+        <h2>Data</h2>
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <p style="color:#fff">
+              Large volumes of data are analyzed using association rule mining to uncover intriguing linkages and relationships. 
+              This rule displays the number of times an itemset appears in a transaction. A market-based analysis serves as a common illustration. 
+              One of the most important methods used by large organizations to demonstrate correlations between goods is market-based analysis. 
+              It enables retailers to discover connections between the products that customers usually purchase together. 
+              We can discover rules that anticipate the occurrence of an item based on the occurrences of other things in the transaction 
+              given a set of transactions.
+            </p><br><br>
+            <p style="color:#fff">
+              Some of the important terms in regards to Association rule includes :-
+              <br><br>
+              Support - The number of transactions that include items in the {X} and {Y} parts of the rule as a 
+              percentage of the total number of transaction.It is a measure of how frequently the collection of 
+              items occur together as a percentage of all transactions.
+            </p><br><br>
+            <p style="color:#fff">
+            Confidence - It is the ratio of the no of transactions that includes all items in {B} as well as the no 
+            of transactions that includes all items in {A} to the no of transactions that includes all items in {A}.
+            </p>
+            <br><br>
+            <p style="color:#fff">
+            Lift - The lift of the rule X=>Y is the confidence of the rule divided by the expected confidence, assuming 
+            that the itemsets X and Y are independent of each other.The expected confidence is the confidence divided by 
+            the frequency of {Y}.
+            </p>
+            <br><br>  
+            <p style="color:#fff">
+              The association rule mining is applied on the plot of the movies, converting the plot belonging to 
+              a particular movie into a transaction data which is unlabelled. The associations then are drawn between
+              the words as the labelled items the form of the graph data structures.
+            </p>
+            <br><br>
+            <p style="color:#fff"> 
+              <a href="https://github.com/Karandh1r/TextMiningAssignment-1/blob/master/AssociateRuleMining.r">Associate Rule Mining</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Graph1.PNG" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>Visualization inorder to get the associations between different words belonging to the network.
+           </p>
+        </div>
+       </div>
+       <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Graph2.PNG" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>Visualization inorder to get the associations between different words belonging to the network.
+           </p>
+        </div>
+       </div>
+       <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Graph3.PNG" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>
+            In order to visually represent the relationships between discrete objects, the nodes network builds network d3 libraries. 
+            A discrete component or object is represented by a single point or circle called a node. Any numerical value may be represented 
+            by the size or color of the nodes to indicate the significance of the nodes, such as the extent to which item an appears 
+            frequently in the dataset.
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/confidence.PNG" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>The rules extracted from the Apriori Algorithm where the rules are sorted by confidence.
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Lift.PNG" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>The rules extracted from the Apriori Algorithm where the rules are sorted by Lift.
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/support.PNG" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>The rules extracted from the Apriori Algorithm where the rules are sorted by support.
+           </p>
+        </div>
+       </div>
+      </div>
+    </div>
+  </section> 
+  <!-- End of Associate Rule Mining-->
+
+  <!--Latent Dirichlet Allocation-->
+  <section id="lda" class="datas">
+    <div class="container">
+      <div class="section-title">
+        <h2>Data</h2>
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <p style="color:#fff">
+              The dataset collection is done from the IMDB website
+              by web scraping the movies using a python package called as "BeautifulSoup" and "Selenium". The webscrapping 
+              of the data is done as the first step inorder to get the name of the movies along with their MovieId so that 
+              can be used as the primary key for the join operation between different csv's using the pandas join 
+              operation.
+            </p><br><br>
+            <p style="color:#fff">
+              The further steps includes getting the user reviews from the IMDB website. For this particular
+              task selenium is used as the webscrapping tool as an onlick events needs to performed inorder to 
+              extract the user reviews data. The user reviews are then passed through the preprocessing and cleaning
+              steps inorder to remove all the stopwords, punctuations and special symbols.
+            </p><br><br>
+            <p style="color:#fff">
+            The further steps include getting the user reviews from the IMDB website. For this particular task Selenium 
+            is used as the web scrapping tool as a click event needs to perform to extract the user reviews data. The user 
+            reviews are then passed through the preprocessing and cleaning steps to remove all the stopwords, punctuations, 
+            and special symbols.
+            </p>
+            <br><br>
+            <p style="color:#fff">
+            The next step involved lemmatization, stemming, TFIDF vectorization, and Count vectorization. The important features
+            are extracted from the methods and used to produce the tag clouds.
+            </p>
+            <br><br>  
+            <p style="color:#fff">
+              The below tag clouds are created based on the description column from the news API and the user reviews column from 
+              the OMDB API.
+            </p>
+            <br><br>
+            <p style="color:#fff"> 
+              <a href="https://colab.research.google.com/drive/1_mXlX6pNquvRHg8uOqE-5Y_-vZk1riS1?usp=sharing">Latent Dirichlet Allocation</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/LDA.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p>The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
+            action movies. Moreover, some of the other common words also consist of act, and actor which are 
+            commonly used words in the movies. The result is based on extracting the features using the 
+            count vectorizer technique.
+           </p>
+        </div>
+       </div>
+       <br><br>
+    </div>
+  </section>
+  <!--End of Latent Dirichlet Allocation-->
+
+
+
+
+
+
+
 
   <!-- Start Links section -->
   <!--<section id="links" class="services">
