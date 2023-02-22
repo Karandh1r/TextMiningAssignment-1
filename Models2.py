@@ -97,6 +97,7 @@ class MLmodels:
         
                   
         MyDT.fit(Train_X_Tfidf, y_train)
+        
         tree.plot_tree(MyDT)
         feature_names = vectorizer.get_feature_names_out() 
         dot_data = tree.export_graphviz(MyDT, out_file=None,
@@ -110,6 +111,7 @@ class MLmodels:
         print("Prediction\n")
         DT_pred=MyDT.predict(Test_X_Tfidf)
         print(DT_pred)
+        print(MyDT.score(Test_X_Tfidf,y_test))
            
         bn_matrix = confusion_matrix(y_test, DT_pred)
         print("\nThe confusion matrix is:")
