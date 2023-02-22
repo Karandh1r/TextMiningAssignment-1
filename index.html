@@ -1294,37 +1294,35 @@
           <div class="col-lg-12" data-aos="fade-up">
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
             <p style="color:#fff;text-justify: inter-character;text-align: justify">
-              Latent Dirichlet Allocation is referred to as LDA. Data is growing exponentially as time goes by. 
-              A significant portion of the data is unstructured, and some of it is unlabeled. Manually labeling 
-              each and every piece of data is a laborious effort. If not manually, how can we label such a vast 
-              amount of data? The LDA is here to save the day. One topic modeling technique used to examine a 
-              large quantity of data, divide the data into related groups, and label each group is LDA. It should 
-              be mentioned that the LDA technique is for unsupervised learning, which uses grouping data into 
-              related subjects to label the data. Contrary to other clustering techniques, such as K-Means clustering, 
-              which leverage the idea of distance between.
+              The objective of the support vector machine algorithm is to find a hyperplane in an N-dimensional 
+              space(N — the number of features) that distinctly classifies the data points. There are a variety 
+              of potential hyperplanes that could be used to separate the two classes of data points. Finding a 
+              plane with the greatest margin—that is, the greatest separation between data values from both classes—is 
+              our goal. Maximizing the margin distance provides some reinforcement so that future data points can 
+              be classified with more confidence.
             </p><br><br>
             <p style="color:#fff;text-justify: inter-character;text-align: justify">
-              Before applying the algorithm of LDA, the data cleaning is done in-order to remove all the stopwords,
-              punctuations and the adjectives and after that the technique of LDA is being applied. The technique
-              of the LDA provides the distribution curve for different words across the documents.
+              Decision boundaries known as hyperplanes assist in categorizing the data elements. Different classes 
+              can be attributed to the data points that lie on either side of the hyperplane. Additionally, the amount 
+              of features affects how big the hyperplane is. The hyperplane is just a line if there are only two input 
+              characteristics. If the number of input features is 3, then the hyperplane becomes a two-dimensional plane. 
+              It becomes difficult to imagine when the number of features exceeds 3.
             </p>
             <br><br>
             <p style="color:#fff;text-justify: inter-character;text-align: justify">
-              In order to understand how words' meanings depend on the larger context in which they are used in natural 
-              language, a group of text analysis techniques known as "bag analysis" or "group word analysis" examine "bags" 
-              or groups of words collectively rather than counting them individually. Topic modeling is one of these methods. 
-              Cluster analysis, latent semantic analysis, and other methods have been used to detect clustering within texts 
-              in addition to topic modeling.
+              Support vectors are data points that are closer to the hyperplane and influence the position and orientation 
+              of the hyperplane. Using these support vectors, we maximize the margin of the classifier. Deleting the support 
+              vectors will change the position of the hyperplane. These are the points that help us build our SVM.
             </p>
             <br><br>
             <p style="color:#fff;text-justify: inter-character;text-align: justify">
-              The LDA is model is applied to the user-reviews that are extracted from the IMDB website which is followed
+              The SVM is model is applied to the user-reviews that are extracted from the IMDB website which is followed
               by stemming and lemmatization of the sentences, after that an model is applied which distributes the probability
               of the across topics and inside a particualar topic distributes to the words belonging to a particualar topic.
             </p>
             <br><br>
             <p style="color:#fff"> 
-              <a href="https://colab.research.google.com/drive/1_mXlX6pNquvRHg8uOqE-5Y_-vZk1riS1?usp=sharing">Latent Dirichlet Allocation</a>
+              <a href="https://github.com/Karandh1r/TextMiningAssignment-1/blob/master/Models2.py">SVM</a>
             </p>
           </div>
         </div>
@@ -1332,7 +1330,73 @@
       <br><br>
       <div class="row">
         <div class="col-lg-4" data-aos="fade-right">
-           <img src="assets/img/data/LDA.png" class="img-fluid" alt="">
+           <img src="assets/img/data/filtered_Data.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p style="text-justify: inter-character;text-align: justify;">
+            Cleaned data for all the userReviews, MovieId and the Sentiment. The sentiment is obtained using
+            the Api for the analysis which can be positive, negative or neutral. The figure show the image of 
+            the trained dataset. The dataset is divided into the training and the testing sets using the
+            train_test_split method of the sklearn library. 
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/testData.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p> The figure show the image of the test dataset.</p>
+        </div>
+       </div>
+       <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/wordFrequency.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p style="text-justify: inter-character;text-align: justify">
+            The figure shows the list of the positive and the negative cofficients stacked in blue and red. The 
+            positive and the negative cofficients are represented along with their percentage counts on the y axis.
+           </p>
+        </div>
+       </div>
+       <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/LinearKernel.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p style="text-justify: inter-character;text-align: justify">
+            The figure show the different documents along with the distribution of the words. while determining the papers' 
+            subjects. It's crucial to remember that LDA starts by randomly assigning subjects to each word and then iteratively 
+            improves the process through Gibbs sampling.
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/RadialBasisKernel.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p style="text-justify: inter-character;text-align: justify">
+            The figure show the different documents along with the distribution of the words. while determining the papers' 
+            subjects. It's crucial to remember that LDA starts by randomly assigning subjects to each word and then iteratively 
+            improves the process through Gibbs sampling.
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/PolynomialKernel.png" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>

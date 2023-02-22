@@ -197,5 +197,5 @@ class MLmodels:
 ml_models = MLmodels()
 # ml_models.labeldata()
 #ml_models.NaiveBayes()
-ml_models.DecisionTreeClassifier()
-#ml_models.SVM()
+#ml_models.DecisionTreeClassifier()
+ml_models.SVM()
