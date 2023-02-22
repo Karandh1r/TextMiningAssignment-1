@@ -563,7 +563,7 @@
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up">
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               The project's objective is to gauge the tone of the movie reviews and predict whether a user should see the film or not. A user may decide whether 
               to watch a movie based on a review, which may be favorable or unfavorable. In a 2018 survey, 63% of adults said they relied moderately to heavily 
               on online reviews before going to the movies. While there is a ton of study focusing on review quality and quantity, there is comparatively little 
@@ -571,14 +571,14 @@
               IMDB ratings, and other platforms with content from these sources, both movie critics and regular users post reviews.
             </p> 
             <br><br> 
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               Regarding a film's caliber or focus, critics and average viewers frequently hold different views. Decisions to see a movie might be complicated 
               by the conflicting messages these two groups' reviews send and the interactions between them. Users and critics can each take a distinct tack when 
               writing on various subjects like movie narrative, acting, and cinematography.During the collection of user reviews and rating from omdb API there has 
               been a quantified  topic consistency using the degree of overlap in the underlying topics conveyed by user and critic reviews.
             </p>
             <br><br> 
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               Consumers participate in WOM whether they are exceedingly satisfied or extremely unsatisfied, according to the most widely recognized theory in the literature. 
               Customers can lessen their unhappiness, which is linked to unpleasant emotions, by leaving reviews. As a result, dissonance reduction is a term occasionally used 
               to describe the process of focusing on negative WOM. Additionally, it has been seen that customers participate in bad WOM out of charity, retaliation, and advice seeking.
@@ -605,32 +605,32 @@
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up">
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               The dataset collection is done from the IMDB website
               by web scraping the movies using a python package called as "BeautifulSoup" and "Selenium". The webscrapping 
               of the data is done as the first step inorder to get the name of the movies along with their MovieId so that 
               can be used as the primary key for the join operation between different csv's using the pandas join 
               operation.
             </p><br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               The further steps includes getting the user reviews from the IMDB website. For this particular
               task selenium is used as the webscrapping tool as an onlick events needs to performed inorder to 
               extract the user reviews data. The user reviews are then passed through the preprocessing and cleaning
               steps inorder to remove all the stopwords, punctuations and special symbols.
             </p><br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
             The further steps include getting the user reviews from the IMDB website. For this particular task Selenium 
             is used as the web scrapping tool as a click event needs to perform to extract the user reviews data. The user 
             reviews are then passed through the preprocessing and cleaning steps to remove all the stopwords, punctuations, 
             and special symbols.
             </p>
             <br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
             The next step involved lemmatization, stemming, TFIDF vectorization, and Count vectorization. The important features
             are extracted from the methods and used to produce the tag clouds.
             </p>
             <br><br>  
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               The below tag clouds are created based on the description column from the news API and the user reviews column from 
               the OMDB API.
             </p>
@@ -652,7 +652,8 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
+           <p style="text-justify: inter-character;text-align: justify">
+            The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
             action movies. Moreover, some of the other common words also consist of act, and actor which are 
             commonly used words in the movies. The result is based on extracting the features using the 
             count vectorizer technique.
@@ -666,7 +667,7 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>
+           <p style="text-justify: inter-character;text-align: justify">
               The other tag cloud is based on extracting the features from the TFIDF vectoriser, the tag cloud
               shows that most frequent words in the tag cloud includes ring, obvious, academic, robbin.
             </p>
@@ -747,24 +748,24 @@
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up">
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               Unsupervised learning techniques like clustering require the use of unlabeled datasets for the references. In general, 
               it is utilized to record the grouping, underlying processes, and meaningful structure of a dataset. For 
               clustering, the population must be split up into a number of groups so that the data points within each 
               group are more similar to one another than the data points within other groups. It is, in essence, 
               a grouping of items based on their similarities and differences.
             </p><br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               The selected columns for the k-means clustering includes BoxOffice and Metascore and thus classification
               is done and categorization is done into 3 clusters. 
             </p><br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               K-Means clustering is an unsupervised learning algorithm. There is no labeled data for this clustering, 
               unlike in supervised learning. K-Means performs the division of objects into clusters that share similarities
               and are dissimilar to the objects belonging to another cluster. 
             </p>
             <br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               An unsupervised learning technique for clustering data points is hierarchical clustering. The method calculates 
               clusters based on how different the data are from one another. Unsupervised learning eliminates the need to 
               train a model and eliminates the requirement for a "target" variable. All data can be shown and the relationship 
@@ -786,7 +787,8 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>The figures shows the dataset on which the k-means clustering algorithm is performed.
+           <p style="text-justify: inter-character;text-align: justify">T
+            The figures shows the dataset on which the k-means clustering algorithm is performed.
             The code uses 2 columns from the dataset inorder to classify the points. The columns which
             are selected for this purpose includes BoxOffice and Metascore as the measure for the 
             classification task.
@@ -800,7 +802,8 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>The figures shows K-means clusters based on the dataset provided. The figure shows
+           <p style="text-justify: inter-character;text-align: justify">
+            The figures shows K-means clusters based on the dataset provided. The figure shows
             3 clusters that has been classified as green, voilet and yellow and with their corresponding
             centers. 
            </p>
@@ -813,7 +816,7 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>
+           <p style="text-justify: inter-character;text-align: justify">
               The figure shows the HClustering technique R using the cosine similarity as the distance measure. Some 
               of the key points for the differences from the k means clustering involves one can stop at any number of 
               clusters one find appropriate by interpreting the dendrogram. The process involves beginning with one 
@@ -830,7 +833,7 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>
+           <p style="text-justify: inter-character;text-align: justify">
               The figuere shows that the optimal K ie 2 that we should use inorder to perform the Hierarchical
               clustering using the Silhouette method.
             </p>
@@ -843,7 +846,7 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>
+           <p style="text-justify: inter-character;text-align: justify">
               The figure show performing out the clustering technique using the 2 centered clustering
               assignmeng using the Euclidean distance as the distance measure.
             </p>
@@ -856,7 +859,7 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>
+           <p style="text-justify: inter-character;text-align: justify">
               The The figure show performing out the clustering technique using the 3 centered clustering
               assignmeng using spearman as the distance measure.
             </p>
@@ -869,7 +872,7 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>
+           <p style="text-justify: inter-character;text-align: justify">
             The The figure show performing out the clustering technique using the 4 centered clustering
             assignmeng using spearman as the distance measure.
             </p>
@@ -888,7 +891,7 @@
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up">
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               Large volumes of data are analyzed using association rule mining to uncover intriguing linkages and relationships. 
               This rule displays the number of times an itemset appears in a transaction. A market-based analysis serves as a common illustration. 
               One of the most important methods used by large organizations to demonstrate correlations between goods is market-based analysis. 
@@ -896,25 +899,25 @@
               We can discover rules that anticipate the occurrence of an item based on the occurrences of other things in the transaction 
               given a set of transactions.
             </p><br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               Some of the important terms in regards to Association rule includes :-
               <br><br>
               Support - The number of transactions that include items in the {X} and {Y} parts of the rule as a 
               percentage of the total number of transaction.It is a measure of how frequently the collection of 
               items occur together as a percentage of all transactions.
             </p><br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
             Confidence - It is the ratio of the no of transactions that includes all items in {B} as well as the no 
             of transactions that includes all items in {A} to the no of transactions that includes all items in {A}.
             </p>
             <br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
             Lift - The lift of the rule X=>Y is the confidence of the rule divided by the expected confidence, assuming 
             that the itemsets X and Y are independent of each other.The expected confidence is the confidence divided by 
             the frequency of {Y}.
             </p>
             <br><br>  
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               The association rule mining is applied on the plot of the movies, converting the plot belonging to 
               a particular movie into a transaction data which is unlabelled. The associations then are drawn between
               the words as the labelled items the form of the graph data structures.
@@ -955,7 +958,7 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>
+           <p style="text-justify: inter-character;text-align: justify">
             In order to visually represent the relationships between discrete objects, the nodes network builds network d3 libraries. 
             A discrete component or object is represented by a single point or circle called a node. Any numerical value may be represented 
             by the size or color of the nodes to indicate the significance of the nodes, such as the extent to which item an appears 
@@ -1009,7 +1012,7 @@
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up">
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               Latent Dirichlet Allocation is referred to as LDA. Data is growing exponentially as time goes by. 
               A significant portion of the data is unstructured, and some of it is unlabeled. Manually labeling 
               each and every piece of data is a laborious effort. If not manually, how can we label such a vast 
@@ -1019,10 +1022,24 @@
               related subjects to label the data. Contrary to other clustering techniques, such as K-Means clustering, 
               which leverage the idea of distance between.
             </p><br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               Before applying the algorithm of LDA, the data cleaning is done in-order to remove all the stopwords,
               punctuations and the adjectives and after that the technique of LDA is being applied. The technique
               of the LDA provides the distribution curve for different words across the documents.
+            </p>
+            <br><br>
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
+              In order to understand how words' meanings depend on the larger context in which they are used in natural 
+              language, a group of text analysis techniques known as "bag analysis" or "group word analysis" examine "bags" 
+              or groups of words collectively rather than counting them individually. Topic modeling is one of these methods. 
+              Cluster analysis, latent semantic analysis, and other methods have been used to detect clustering within texts 
+              in addition to topic modeling.
+            </p>
+            <br><br>
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
+              The LDA is model is applied to the user-reviews that are extracted from the IMDB website which is followed
+              by stemming and lemmatization of the sentences, after that an model is applied which distributes the probability
+              of the across topics and inside a particualar topic distributes to the words belonging to a particualar topic.
             </p>
             <br><br>
             <p style="color:#fff"> 
@@ -1038,10 +1055,10 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
-            action movies. Moreover, some of the other common words also consist of act, and actor which are 
-            commonly used words in the movies. The result is based on extracting the features using the 
-            count vectorizer technique.
+           <p style="text-justify: inter-character;text-align: justify">
+            The figure show the different documents along with the distribution of the words. while determining the papers' 
+            subjects. It's crucial to remember that LDA starts by randomly assigning subjects to each word and then iteratively 
+            improves the process through Gibbs sampling.
            </p>
         </div>
        </div>
@@ -1058,7 +1075,7 @@
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up">
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               The words Naive and Bayes, which make up the Nave Bayes algorithm, are as follows: 
               Because it presumes that the occurrence of one trait is unrelated to the occurrence of other 
               features, it is referred to as naive. A red, spherical, sweet fruit, for instance, is recognized 
@@ -1066,7 +1083,7 @@
               on one another, each characteristic helps to recognize it as an apple. 
               Because it relies on the Bayes' Theorem concept, it is known as the Bayes principle.
             </p><br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               Using Bayes theorem, we can find the probability of A happening, given that B has occurred. Here, 
               B is the evidence and A is the hypothesis. The assumption made here is that the predictors/features 
               are independent. That is presence of one particular feature does not affect the other. Hence it is 
@@ -1075,11 +1092,25 @@
               P(A/B) = P(B/A)P(A)/P(B)
               <br><br>
             </p>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
                The splitting of the data is done using the train_test_split of the sklearn into the training
                and the testing set using the fourth argument as 0.25 it shows that that we have kept 75% for 
                the training points and 25% for the testing points. The accuracy that we get from the Naive Bayes
                is obtained on the data is 57.33334
+            </p>
+            <br><br>
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
+              The classfication of the userReviews is done based on the sentiment which can be positive, negative
+              or neutral. The labelling of the dataset is done using an API which classify the reviews to positive,
+              &nbsp;negative or neural, which then is fed to the decision tree model and the classification of the reviews
+              is done.
+            </p>
+            <br><br>
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
+              The classfication of the userReviews is done based on the sentiment which can be positive, negative
+              or neutral. The labelling of the dataset is done using an API which classify the reviews to positive,
+              negative or neural, which then is fed to the decision tree model and the classification of the reviews
+              is done.
             </p>
             <br><br>
             <p style="color:#fff"> 
@@ -1095,10 +1126,8 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
-            action movies. Moreover, some of the other common words also consist of act, and actor which are 
-            commonly used words in the movies. The result is based on extracting the features using the 
-            count vectorizer technique. 
+           <p style="text-justify: inter-character;text-align: justify">
+             The image shows the classification of the Naive Bayes classifier into different classes.
            </p>
         </div>
        </div>
@@ -1109,7 +1138,7 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>
+           <p style="text-justify: inter-character;text-align: justify">
             Cleaned data for all the userReviews, MovieId and the Sentiment. The sentiment is obtained using
             the Api for the analysis which can be positive,negative or neutral. The figure show the image of 
             the trained dataset.
@@ -1135,7 +1164,7 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>
+           <p style="text-justify: inter-character;text-align: justify">
             The images show the confusion matrix and the accuracy score using the Naive Bayes
             algorithms inorder classify the sentiment positive, negative or neutral.
            </p>
@@ -1143,7 +1172,7 @@
        </div>
     </div>
   </section>
-  <!--End of Naive Bayes Allocation-->
+  <!--End of Naive Bayes Section-->
 
   <!-- Decision Tree Section-->
   <section id="decision" class="datas">
@@ -1153,7 +1182,7 @@
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up">
             <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               A supervised learning method used in statistics, data mining, and machine learning is decision tree learning. 
               In this formalization, inferences about a set of data are made using a classification or regression decision tree as 
               a predictive model. Classification trees are tree models where the target variable can take a discrete range of values. 
@@ -1162,7 +1191,7 @@
               More broadly, the idea of a regression tree can be used to any type of object that has pairwise differences, including 
               categorical sequences.
             </p><br><br>
-            <p style="color:#fff">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
               A decision tree is drawn upside down with its root at the top. In the image on the left, the bold text in black represents 
               a condition/internal node, based on which the tree splits into branches/ edges. The end of the branch that doesn’t 
               split anymore is the decision/leaf, in this case, whether the passenger died or survived, represented as red and green 
@@ -1170,6 +1199,13 @@
               <br><br>
               The impurity calculation of the decision tree can be based on the gini index or the entropy loss. The gini
               criterion is much faster as compared to the entropy loss criterion.
+            </p>
+            <br><br>
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
+              The classfication of the userReviews is done based on the sentiment which can be positive, negative
+              or neutral. The labelling of the dataset is done using an API which classify the reviews to positive,
+              negative or neural, which then is fed to the decision tree model and the classification of the reviews
+              is done.
             </p>
             <br><br>
             <p style="color:#fff"> 
@@ -1185,10 +1221,9 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
-            action movies. Moreover, some of the other common words also consist of act, and actor which are 
-            commonly used words in the movies. The result is based on extracting the features using the 
-            count vectorizer technique.
+           <p style="text-justify: inter-character;text-align: justify">
+            The classification of the data is done at each level of the node based on the 
+            impurity level. The root nodes are the cleaned nodes with no impurity level in it.
            </p>
         </div>
        </div>
@@ -1199,10 +1234,10 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>The tag cloud shows that the most frequent words in the are action which means there is an inclination towards 
-            action movies. Moreover, some of the other common words also consist of act, and actor which are 
-            commonly used words in the movies. The result is based on extracting the features using the 
-            count vectorizer technique.
+           <p style="text-justify: inter-character">
+            The decision tree shows the important features such as excellent, performance
+            actually, mess etc along with the entropy that keep on decreasing as we reach from
+            the parent node to the leaf node.
            </p>
         </div>
        </div>
@@ -1213,9 +1248,9 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>
+           <p style="text-justify: inter-character;text-align: justify;">
             Cleaned data for all the userReviews, MovieId and the Sentiment. The sentiment is obtained using
-            the Api for the analysis which can be positive,negative or neutral. The figure show the image of 
+            the Api for the analysis which can be positive, negative or neutral. The figure show the image of 
             the trained dataset. The dataset is divided into the training and the testing sets using the
             train_test_split method of the sklearn library. 
            </p>
@@ -1238,7 +1273,8 @@
         </div>
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
-           <p>The figure shows the accuracy of the decision tree classifier along with the
+           <p style="text-justify: inter-character;text-align: justify">
+            The figure shows the accuracy of the decision tree classifier along with the
             confusion matrix. The figure also show the classfication step based on which 
             the decision should be taken, based on the criterion entropy. The accuracy score
             obtained using the decision tree classifier is 0.426666.
@@ -1248,6 +1284,69 @@
     </div>
   </section>
   <!--End of Decision Tree Section-->
+
+  <!-- SVM Section-->
+  <section id="svm" class="datas">
+    <div class="container">
+      <div class="section-title">
+        <h2>Data</h2>
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
+              Latent Dirichlet Allocation is referred to as LDA. Data is growing exponentially as time goes by. 
+              A significant portion of the data is unstructured, and some of it is unlabeled. Manually labeling 
+              each and every piece of data is a laborious effort. If not manually, how can we label such a vast 
+              amount of data? The LDA is here to save the day. One topic modeling technique used to examine a 
+              large quantity of data, divide the data into related groups, and label each group is LDA. It should 
+              be mentioned that the LDA technique is for unsupervised learning, which uses grouping data into 
+              related subjects to label the data. Contrary to other clustering techniques, such as K-Means clustering, 
+              which leverage the idea of distance between.
+            </p><br><br>
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
+              Before applying the algorithm of LDA, the data cleaning is done in-order to remove all the stopwords,
+              punctuations and the adjectives and after that the technique of LDA is being applied. The technique
+              of the LDA provides the distribution curve for different words across the documents.
+            </p>
+            <br><br>
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
+              In order to understand how words' meanings depend on the larger context in which they are used in natural 
+              language, a group of text analysis techniques known as "bag analysis" or "group word analysis" examine "bags" 
+              or groups of words collectively rather than counting them individually. Topic modeling is one of these methods. 
+              Cluster analysis, latent semantic analysis, and other methods have been used to detect clustering within texts 
+              in addition to topic modeling.
+            </p>
+            <br><br>
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
+              The LDA is model is applied to the user-reviews that are extracted from the IMDB website which is followed
+              by stemming and lemmatization of the sentences, after that an model is applied which distributes the probability
+              of the across topics and inside a particualar topic distributes to the words belonging to a particualar topic.
+            </p>
+            <br><br>
+            <p style="color:#fff"> 
+              <a href="https://colab.research.google.com/drive/1_mXlX6pNquvRHg8uOqE-5Y_-vZk1riS1?usp=sharing">Latent Dirichlet Allocation</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/LDA.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p style="text-justify: inter-character;text-align: justify">
+            The figure show the different documents along with the distribution of the words. while determining the papers' 
+            subjects. It's crucial to remember that LDA starts by randomly assigning subjects to each word and then iteratively 
+            improves the process through Gibbs sampling.
+           </p>
+        </div>
+       </div>
+       <br><br>
+    </div>
+  </section>
+  <!-- End of SVM Section -->
 
 
   <!-- Start Links section -->
