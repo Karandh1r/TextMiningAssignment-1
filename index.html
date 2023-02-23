@@ -1250,6 +1250,7 @@
            <p style="text-justify: inter-character;text-align: justify">
             The classification of the data is done at each level of the node based on the 
             impurity level. The root nodes are the cleaned nodes with no impurity level in it.
+            using entropy as the impurity criterion.
            </p>
         </div>
        </div>
@@ -1264,6 +1265,20 @@
             The decision tree shows the important features such as excellent, performance
             actually, mess etc along with the entropy that keep on decreasing as we reach from
             the parent node to the leaf node.
+           </p>
+        </div>
+       </div>
+       <br><br>
+       <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+           <img src="assets/img/data/Decision_3.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 content" data-aos="fade-left">
+          <br>
+           <p style="text-justify: inter-character">
+            The classification of the data is done at each level of the node based on the 
+            impurity level. The root nodes are the cleaned nodes with no impurity level in it.
+            using gini as the impurity criterion.
            </p>
         </div>
        </div>
@@ -1344,7 +1359,13 @@
             <p style="color:#fff;text-justify: inter-character;text-align: justify">
               The SVM is model is applied to the user-reviews that are extracted from the IMDB website which is followed
               by stemming and lemmatization of the sentences, after that an model is applied which distributes the probability
-              of the across topics and inside a particualar topic distributes to the words belonging to a particualar topic.
+              of the across topics and inside a particualar topic distributes to the words belonging to a particular topic.
+            </p>
+            <br><br>
+            <p style="color:#fff;text-justify: inter-character;text-align: justify">
+              The results are obtained using the 3 different Kernels technique namely Linear, Radial basis Kernel
+              and the Polynomial Kernel and the accuracy of the Linear Kernel is highest as compared to other
+              Kernel techniques.
             </p>
             <br><br>
             <p style="color:#fff"> 
@@ -1399,9 +1420,8 @@
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
            <p style="text-justify: inter-character;text-align: justify">
-            The figure show the different documents along with the distribution of the words. while determining the papers' 
-            subjects. It's crucial to remember that LDA starts by randomly assigning subjects to each word and then iteratively 
-            improves the process through Gibbs sampling.
+            The figure shows the Linear SVM Kernel results with the accuracy of 0.573333 and the corresponding
+            confusion matrix.
            </p>
         </div>
        </div>
@@ -1413,9 +1433,8 @@
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
            <p style="text-justify: inter-character;text-align: justify">
-            The figure show the different documents along with the distribution of the words. while determining the papers' 
-            subjects. It's crucial to remember that LDA starts by randomly assigning subjects to each word and then iteratively 
-            improves the process through Gibbs sampling.
+            The figure shows the Radial basis Kernel results with the accuracy measure of 0.4555333 and the 
+            corresponding confusion matrix to it.
            </p>
         </div>
        </div>
@@ -1427,9 +1446,8 @@
         <div class="col-lg-8 content" data-aos="fade-left">
           <br>
            <p style="text-justify: inter-character;text-align: justify">
-            The figure show the different documents along with the distribution of the words. while determining the papers' 
-            subjects. It's crucial to remember that LDA starts by randomly assigning subjects to each word and then iteratively 
-            improves the process through Gibbs sampling.
+            The figure show the Polynomial Kernel results with the accuracy measure of 0.4555 and the corresponding
+            confusion matrix to it.
            </p>
         </div>
        </div>

@@ -83,7 +83,7 @@ class MLmodels:
 
         Train_X_Tfidf = vectorizer.transform(x_train)
         Test_X_Tfidf = vectorizer.transform(x_test)
-        MyDT = DecisionTreeClassifier(criterion='entropy',
+        MyDT = DecisionTreeClassifier(criterion='gini',
                             splitter='best',
                             max_depth=7, 
                             min_samples_split=2, 
@@ -197,5 +197,5 @@ class MLmodels:
 ml_models = MLmodels()
 # ml_models.labeldata()
 #ml_models.NaiveBayes()
-#ml_models.DecisionTreeClassifier()
-ml_models.SVM()
+ml_models.DecisionTreeClassifier()
+#ml_models.SVM()
