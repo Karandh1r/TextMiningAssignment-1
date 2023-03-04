@@ -142,7 +142,9 @@
     });
 
   });
-
+  $('a.dropdown-item').click(function(e){
+    $('div.dropdown-menu').removeClass("show")
+  });
   // Initiate venobox (lightbox feature used in portofilo)
   $(document).ready(function() {
     $('.venobox').venobox();
